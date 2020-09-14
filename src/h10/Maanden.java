@@ -7,21 +7,25 @@ public class Maanden extends Applet {
 
     Label label;
     TextField input;
+    TextField jaar;
     Button confirm;
     String maand = "Kies een maand";
     String dagen = "0";
 
     public void init() {
 
-        label = new Label("Voer een maandnummer in:");
+        label = new Label("Voer een jaar en maandnummer in:");
 
-        input = new TextField("",10);
+        jaar = new TextField("",5);
+
+        input = new TextField("",5);
         input.addActionListener(new Listener());
 
         confirm = new Button("Ok");
         confirm.addActionListener(new Listener());
 
         add(label);
+        add(jaar);
         add(input);
         add(confirm);
 
@@ -37,6 +41,8 @@ public class Maanden extends Applet {
     class Listener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String output = input.getText();
+            String jaartxt = jaar.getText();
+            int jaar = Integer.parseInt(jaartxt);
             int getal = Integer.parseInt(output);
             switch(getal) {
                 case 1:
@@ -45,7 +51,11 @@ public class Maanden extends Applet {
                     break;
                 case 2:
                     maand = "Februari";
-                    dagen = "28/29";
+                    if ((jaar % 4 == 0 && !(jaar % 100 == 0)) || jaar % 400 == 0 ) {
+                        dagen = "29";
+                    } else {
+                        dagen = "28";
+                    }
                     break;
                 case 3:
                     maand = "Maart";
