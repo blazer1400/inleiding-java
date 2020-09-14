@@ -12,11 +12,13 @@ public class Tekstvak extends Applet {
 
     public void init() {
 
-        tekstvak = new TextField("",20);
-
         KnopListener kl = new KnopListener();
-        ok = new Button();
+
+        tekstvak = new TextField("",20);
+        tekstvak.addActionListener(kl);
+
         ok.addActionListener(kl);
+        ok = new Button();
         ok.setLabel("Ok");
 
         ResetEvent bl = new ResetEvent();

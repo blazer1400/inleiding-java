@@ -15,6 +15,7 @@ public class BTW extends Applet {
 
     public void init() {
         input = new TextField("",20);
+        input.addActionListener(new Calc());
 
         confirm = new Button("Ok");
         confirm.addActionListener(new Calc());
