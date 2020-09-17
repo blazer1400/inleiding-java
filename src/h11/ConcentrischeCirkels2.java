@@ -24,7 +24,6 @@ public class ConcentrischeCirkels2 extends Applet {
             x -= 5;
             y -= 5;
 
-
         }
 
     }
