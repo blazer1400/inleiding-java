@@ -10,7 +10,7 @@ public class Vierkanten extends Applet {
         int x = 40;
         int y = 40;
 
-        for(teller = 0; teller <= 10; teller++) {
+        for(teller = 0; teller <= 5; teller++) {
 
             g.drawRect(x, y, 20, 20);
             x += 20;
