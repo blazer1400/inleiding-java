@@ -1,56 +1,34 @@
 package h14;
-import java.awt.*;
 import java.applet.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class RandomKleurEnGetal extends Applet {
 
-    int kleurgetal;
-    int getal = 0;
-    int kleurarray;
-    Color kleur[] = {Color.red, Color.blue, Color.green, Color.yellow, Color.magenta, Color.cyan};
+    int kleurgetal = -1;
+    int getal;
+    String kleur[] = {"Klaver", "Ruit", "Harten", "Schoppen"};
+    String nummer[] = {"aas","2","3","4","5","6","7","8","9","10","boer","dame","heer"};
 
     public void init() {
-        Button confirm = new Button("spin");
-        confirm.addActionListener(new Listener());
-        add(confirm);
+        Button spin = new Button("spin");
+        spin.addActionListener(new Listener());
+        add(spin);
+
     }
 
     public void paint(Graphics g) {
-        g.setColor(kleur[kleurarray - 1]);
-        g.fillRect(50,50,20,20);
-        g.setColor(Color.black);
-        g.setFont(new Font("font", Font.PLAIN, 20));
-        g.drawString(""+getal,53,69);
+        g.drawString("" + kleur[kleurgetal - 1] + " " + nummer[getal - 1],40,40);
     }
 
     class Listener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             double random1 = Math.random();
             double random2 = Math.random();
-            kleurgetal = (int) (random1 * 6 + 1);
-            getal = (int) (random2 * 9 + 1);
-            switch(kleurgetal) {
-                case 1:
-                    kleurarray = 1;
-                    break;
-                case 2:
-                    kleurarray = 2;
-                    break;
-                case 3:
-                    kleurarray = 3;
-                    break;
-                case 4:
-                    kleurarray = 4;
-                    break;
-                case 5:
-                    kleurarray = 5;
-                    break;
-                case 6:
-                    kleurarray = 6;
-                    break;
-            }
+            kleurgetal = (int) (random1 * 4 + 1);
+            getal = (int) (random2 * 13 + 1);
             repaint();
         }
     }
+
 }
