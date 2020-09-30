@@ -63,30 +63,17 @@ public class VierSpelerDeck extends Applet {
     public void paint(Graphics g) {
         int teller;
         int y = 40;
+        int x = 10;
         g.drawString("Speler 1",10,20);
-        for(teller = 0; teller < 13; teller++) {
-            g.drawString(""+deelKaart(),10,y);
-            y += 20;
-        }
-
-        y = 40;
-        g.drawString("Speler 2",100,20);
-        for(teller = 0; teller < 13; teller++) {
-            g.drawString(""+deelKaart(),100,y);
-            y += 20;
-        }
-
-        y = 40;
-        g.drawString("Speler 3",190,20);
-        for(teller = 0; teller < 13; teller++) {
-            g.drawString(""+deelKaart(),190,y);
-            y += 20;
-        }
-
-        y = 40;
-        g.drawString("Speler 4",190,20);
-        for(teller = 0; teller < 13; teller++) {
-            g.drawString(""+deelKaart(),190,y);
+        g.drawString("Speler 2",110,20);
+        g.drawString("Speler 3",210,20);
+        g.drawString("Speler 4",310,20);
+        for(teller = 0; teller < 52; teller++) {
+            if (teller == 13 || teller == 26 || teller == 39) {
+                x += 100;
+                y = 40;
+            }
+            g.drawString(""+deelKaart(),x,y);
             y += 20;
         }
     }
