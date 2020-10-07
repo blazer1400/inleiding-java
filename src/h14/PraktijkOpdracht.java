@@ -1,4 +1,5 @@
 package h14;
+
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -32,11 +33,11 @@ public class PraktijkOpdracht extends Applet {
     public void paint(Graphics g) {
 
         if (!playerturn && stenen > 0) {
-            if (stenen == 22 || stenen == 18 || stenen == 14 || stenen == 10 || stenen == 6 || stenen == 2) {
+            if (stenen % 4 == 2) {
                 stenen -= 1;
-            } else if (stenen == 19 || stenen == 15 || stenen == 11 || stenen == 7 || stenen == 3) {
+            } else if (stenen % 4 == 3) {
                 stenen -= 2;
-            } else if (stenen == 20 || stenen == 16 || stenen == 12 || stenen == 8 || stenen == 4) {
+            } else if (stenen % 4 == 0) {
                 stenen -= 3;
             } else {
                 double random = Math.random();

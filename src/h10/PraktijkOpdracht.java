@@ -37,8 +37,7 @@ public class PraktijkOpdracht extends Applet {
 
     class Listener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String output = input.getText();
-            double getal = Double.parseDouble(output);
+            int getal = Integer.parseInt(input.getText());
             if (getal == 1 || getal == 2 || getal == 3) {
                 error = "";
                 voldoende = "slecht";
